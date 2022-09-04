@@ -1,0 +1,69 @@
+.Nav{
+    display:flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-left: 20px;
+}
+a{
+    text-decoration: none;
+    padding:15px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight:bold;
+    color: black;
+}
+button{
+    padding:15px 55px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight:bold;
+    background-color:lightskyblue ;
+    border: 1px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.nav-link a:hover{
+    border: 1px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    background-color: aliceblue;
+}
+.profile-name{
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}
+.profile-name div{
+    font-size: 20px;
+    font-weight:bold;
+}
+.ico{
+    display:flex;
+    flex-direction:row;
+    column-gap:5px;
+}
+.nav-links {
+    padding-left:50px;
+}
+.nav-links FaTwitter {
+    color:blue;
+}
+.image{
+    width:40px;
+    height:40px;
+}
+.images{
+    width:60px;
+    height:60px;
+    border:1px;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
+}
