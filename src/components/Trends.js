@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaSearch } from "react-icons/fa";
 import stephen from "./DSC_3794x.jpg";
 import verify from "./images.png";
 import "./Trends.css";
+import {useState} from 'react';
 function Trends() {
   let name = "TAIWO Stephen Opeyemi";
   if (name.length > 15) {
     name = name.slice(0, 13) + "...";
-  }
+  };
   return (
     <div className="Trends">
       <div>
@@ -31,7 +32,7 @@ function Trends() {
               @taiwo_op1
             </div>
             <div>
-              <button>Follow</button>
+              <button className='trend-button'>Follow</button>
             </div>
           </a>
         </div>
@@ -55,16 +56,20 @@ function Trends() {
           <p>Show more</p>
         </div>
       </div>
-      <div>
+      <div className='link'>
         <a href="">Terms of Services</a>
         <a href="">Privacy Policy</a>
         <a href="">Cookie Policy</a>
         <a href="">Accessibility</a>
         <a href="">Ads Info</a>
         <a href="">More ...</a><br/>
-        <p></p>
+        <p>2022 Twitter, Inc.</p>
+      </div>
+      <div>
+        <h1>Messages</h1>
       </div>
     </div>
+
   );
 }
 
