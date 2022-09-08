@@ -1,12 +1,14 @@
-import React from 'react';
+import React,{Component} from 'react';
 import stephen from "./DSC_3794x.jpg";
 import verify from "./images.png";
 import './Main.css';
-function Main() {
-  let name = "TAIWO Stephen Opeyemi";
-  if (name.length > 15) {
-    name = name.slice(0, 13) + "...";
-  }
+import Signup from "./Signup";
+import UserDetails from "./UserDetails";
+import PersonalDetails from "./PersonalDetails";
+import Confirmation from "./Confirmation";
+import Success from "./Success";
+function Main ({values,names,name}) {
+
   return (
     <div className="main">
       <div>
@@ -14,7 +16,7 @@ function Main() {
       </div>
       <div className="main-link">
         <div>
-          <img src={stephen} alt="stephen" className="images" />
+          <img src={names} alt={values} className="images" />
         </div>
         <div className="input">
           <div>
@@ -36,15 +38,15 @@ function Main() {
       </div>
       <div className="main-data">
         <div>
-          <img src={stephen} alt="stephen" className="images" />
+          <img src={names} alt={values} className="images" />
         </div>
         <div>
           <div className="main-name">
-            <div>{name}</div>
+            <div>{values}</div>
             <div>
-              <img src={verify} alt="stephen" className="verify" />
+              <img src={verify} alt="twitter" className="verify" />
             </div>
-            <div>@taiwo_op1</div>
+            <div>@{name}</div>
             <div className="pass">
               <p>...</p>
             </div>
@@ -55,7 +57,7 @@ function Main() {
               <p></p>
             </div>
             <div className="detail">
-              <img src={stephen} alt="stephen" />
+              <img src={names} alt={values} />
             </div>
             <div className='likes'>
               <div></div>
@@ -69,5 +71,6 @@ function Main() {
     </div>
   );
 }
+
 
 export default Main;

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ Component } from "react";
 import "./Nav.css";
 // import {FaHouseWindow} from 'react-icons/fa';
 import { IoMdHome } from "react-icons/io";
@@ -14,12 +14,22 @@ import { CgList } from "react-icons/cg";
 
 import { BsPerson } from "react-icons/bs";
 import { CgMoreO} from "react-icons/cg";
+import Signup from "./Signup";
+import UserDetails from "./UserDetails";
+import PersonalDetails from "./PersonalDetails";
+import Confirmation from "./Confirmation";
+import Success from "./Success";
 // import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-function Nav() {
-  let name = "TAIWO Stephen Opeyemi";
-  if (name.length > 15) {
-    name = name.slice(0, 16) + "...";
-  }
+function Nav({values,names,name}) {
+  // let a='';
+  //   for (let key of names) {
+  //     if (key.name === `${values.firstName} ${values.lastName}`) {
+  //       // setState((state)=>state+1);
+  //       a +=key.img;
+  //       console.log(a);
+  //       alert(a)
+  //     }
+  //   }  
   return (
     <div className="Nav">
       <div className="nav-links">
@@ -95,12 +105,12 @@ function Nav() {
       <div className="nav-link">
         <a href="" className="profile-name">
           <div>
-            <img src={stephen} alt="stephen" className="images" />
+            <img src={names} alt={values} className="images" />
           </div>
           <div>
-            {name}
+            {values}
             <br />
-            @taiwo_op1
+            @{name}
           </div>
           <div>...</div>
         </a>

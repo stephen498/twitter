@@ -1,6 +1,7 @@
 .main{
     display:grid;
     grid-template-rows: 10% 20% 70%;
+    overflow:auto;
 }
 .main-link{
     display:flex;
