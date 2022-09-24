@@ -1,7 +1,14 @@
-import React,{useState} from "react";
-
+import React,{useEffect, useState} from "react";
+import {
+  provider,
+  auth,
+  signInWithRedirect,
+  getRedirectResult,
+  onAuthStateChanged
+} from "../config";
 const Confirmation = ({ prevStep, nextStep, values,names }) => {
-  // const [state,setState]=useState(0);
+    const[signedIn, setSignedIn]=useState(false);
+    const [user, setUser] = useState(null);
   // const a=state;
   const Continue = (e) => {
     e.preventDefault();
@@ -14,14 +21,41 @@ const Confirmation = ({ prevStep, nextStep, values,names }) => {
       }
     }    
     if(a>0){
-      nextStep();
+    console.log(a);
+    signInWithRedirect(auth, provider);
+    // nextStep();
     }
     };
   const Previous = (e) => {
     e.preventDefault();
     prevStep();
   };
-  return (
+
+useEffect(()=>{
+  getRedirectResult(auth)
+  .then((result) => {
+      setSignedIn(true);
+      nextStep();
+  }).catch((error) => {
+        console.log(error)
+  });
+},[])
+useEffect(() => {
+   onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const{displayName,email, name}= user;
+    setUser({ displayName, email, name });
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    setUser(null);
+  }
+});
+}, []);
+  return ( 
     <div component="main" maxWidth="xs">
       <div>
         {/* <div>
@@ -62,9 +96,7 @@ const Confirmation = ({ prevStep, nextStep, values,names }) => {
               Confirm & Continue
             </button>
           </div>
-        
-      </div>
-    
+        </div>
   );
 };
 

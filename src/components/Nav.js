@@ -31,6 +31,7 @@ function Nav({values,names,name}) {
   //     }
   //   }  
   return (
+
     <div className="Nav">
       <div className="nav-links">
         <img src={twitter} alt="twitter" className="image" />
@@ -44,7 +45,7 @@ function Nav({values,names,name}) {
         </a>
       </div>
       <div className="nav-link">
-        <a href="" className="ico">
+        <a href="/explore" className="ico">
           <div>
             <FaHashtag />
           </div>

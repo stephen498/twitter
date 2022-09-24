@@ -56,7 +56,7 @@ const PersonalDetails = ({ prevStep, nextStep, handleChange, values }) => {
             </div>
 
             <button
-              onClick={Continue}
+              onClick={Previous}
               type="submit"
               fullWidth
               variant="contained"
